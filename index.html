@@ -3,11 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0b1220">
+  <meta name="theme-color" content="#080d17">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ذهن تریدر">
   <meta name="description" content="ذهن تریدر؛ ژورنال معاملاتی، تحلیل عملکرد و مدیریت روان‌شناسی ترید">
-  <title>ذهن تریدر 2.0</title>
+  <title>ذهن تریدر</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     :root{--bg:#0b1220;--panel:#111c2e;--panel2:#17243a;--text:#eef4ff;--muted:#91a3bd;--line:#263650;--green:#16c784;--red:#ff6577;--amber:#f4b740;--blue:#58b5f7;--shadow:0 16px 40px #0005;--radius:18px}
     body.light{--bg:#f1f5fa;--panel:#fff;--panel2:#f5f8fc;--text:#17243a;--muted:#63738a;--line:#dce5ef;--shadow:0 12px 30px #24364b12}
@@ -26,11 +32,37 @@
     @media(max-width:1100px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.two{grid-template-columns:1fr}.app{grid-template-columns:205px minmax(0,1fr)}}
     @media(max-width:760px){body{padding-bottom:78px}.app{display:block;padding:10px 10px 24px}.sidebar{display:none}.topbar{padding:11px 12px;margin-bottom:12px}.topbar h2{font-size:15px}.topbar p{display:none}.actions .wide{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.stat .value{font-size:20px}.card{padding:14px}.three{grid-template-columns:1fr}.mobile-nav{position:fixed;z-index:80;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);background:var(--panel);border-top:1px solid var(--line);padding:7px 4px calc(7px + env(safe-area-inset-bottom));backdrop-filter:blur(16px)}.mobile-nav button{border:0;background:none;color:var(--muted);font-size:9px;display:grid;gap:3px;place-items:center;padding:4px 0}.mobile-nav button b{font-size:17px}.mobile-nav button.active{color:var(--green)}.form-grid{grid-template-columns:1fr}.chart-wrap{height:205px}.topbar .statusline{display:none}.trade-top{align-items:flex-start}.trade-bottom{align-items:flex-start}.trade-actions{flex-wrap:wrap}.login-card{padding:22px}}
   </style>
+
+  <style id="zt-visual-refresh-23">
+    #tradeForm,#gasUrl{scroll-margin-top:100px}
+    :root{--bg:#080d17;--panel:#101a2e;--panel2:#172239;--text:#f0f4fb;--muted:#8796ae;--line:#24324a;--green:#10b981;--red:#f04468;--amber:#f59e0b;--blue:#3b82f6;--shadow:0 14px 36px #0005;--radius:24px;color-scheme:dark}
+    body.light{--bg:#f2f5f9;--panel:#fff;--panel2:#f5f7fb;--text:#172033;--muted:#66748a;--line:#dce3ed;--green:#0ca678;--red:#df3f60;--amber:#d98b08;--blue:#286de0;--shadow:0 10px 28px #182b4512;color-scheme:light}
+    html{scroll-behavior:smooth}body{background:var(--bg);letter-spacing:-.12px}button{transition:transform .16s ease,background .16s ease,border-color .16s ease,color .16s ease}button:active{transform:scale(.97)}
+    .logo,.brand .logo{background:#07101a;border:1px solid #1c3b39;color:var(--green);box-shadow:0 0 0 5px #10b98112,inset 0 0 18px #10b98114;position:relative}
+    .logo{font-size:0!important}.logo:before,.brand .logo:before{content:"";width:56%;height:56%;border:4px solid var(--green);border-radius:50%;box-shadow:0 0 12px #10b98166,inset 0 0 0 4px #07101a}
+    .logo:after,.brand .logo:after{content:"";position:absolute;width:13%;height:13%;border-radius:50%;background:var(--green);box-shadow:0 0 10px #10b981aa}
+    .login-card{border-radius:30px;background:linear-gradient(155deg,#121e34,#0e1728);border-color:#243650;padding:30px}
+    .login-card .logo{width:70px;height:70px;border-radius:22px;margin:0 auto 18px}
+    .login-card h1,.login-card p{text-align:center}.login-card .btn.primary{border-radius:14px}
+    .app{max-width:1320px;gap:18px}.sidebar{background:linear-gradient(180deg,#101a2e,#0d1627);border-color:#22324c;border-radius:26px}.brand{padding-bottom:20px}.brand .logo{width:46px;height:46px;border-radius:16px}.nav button{border-radius:14px;padding:13px 14px}.nav button.active{background:linear-gradient(90deg,#10b98120,#10b98108);box-shadow:inset -3px 0 var(--green)}
+    .topbar{background:transparent;border:0;border-radius:0;box-shadow:none;padding:8px 2px 16px;margin-bottom:12px;min-height:66px}.topbar-brand{display:flex;align-items:center;gap:11px;min-width:0}.topbar-brand .app-orbit{width:48px;height:48px;border-radius:17px;background:linear-gradient(145deg,#10b981,#07956e);display:grid;place-items:center;box-shadow:0 8px 22px #10b98130;flex:0 0 auto}.app-orbit:before{content:"";width:25px;height:25px;border:3px solid #effff9;border-radius:50%;box-shadow:inset 0 0 0 5px #10b981,inset 0 0 0 7px #effff9}.topbar-brand-copy{display:grid;gap:2px}.topbar-brand-copy strong{font-size:19px;color:var(--green);font-weight:900;white-space:nowrap}.topbar-brand-copy small{font-size:11px;color:var(--muted)}.sync-pill{border:1px solid #28518a;background:#132746;color:#69aaff;border-radius:10px;padding:6px 10px;font-size:11px;font-weight:800;white-space:nowrap}
+    .actions{align-items:center;gap:8px}.icon-btn{width:44px;height:44px;min-width:44px;border-radius:15px;background:#101a2c;border-color:#1f2d45;font-size:19px;padding:0;display:grid;place-items:center}.icon-btn:hover{border-color:#10b98188;color:var(--green)}.icon-btn#syncBtn{background:#245de8;color:#fff;border-color:#245de8;box-shadow:0 7px 18px #245de844}.icon-btn#backupBtn{background:#0c2c2b;color:#36d6a5;border-color:#0e3c37}.icon-btn#themeBtn{background:#111d31;color:#d5dfed}.icon-btn#lockBtn{background:#111d31}
+    .statusline{font-size:10px}.stats{gap:14px}.stat,.card{background:linear-gradient(155deg,#111c31,#10192b);border:1px solid #202e47;border-radius:26px;box-shadow:none}.stat{padding:19px 18px;min-height:132px;position:relative;overflow:hidden}.stat:before{content:"◎";font-size:21px;font-weight:800;text-align:center;line-height:43px;position:absolute;left:17px;top:17px;width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#16355b;color:#4d9aff}.stat:nth-child(2):before{content:"$";font-size:23px;background:#0d3937}.stat:nth-child(3):before{content:"◉";background:#2d2149}.stat:nth-child(4):before{content:"⚖";background:#0c343b}.stat:nth-child(5):before{content:"↘";background:#392b1a}.stat .label{font-size:12px;font-weight:700;padding-left:50px;min-height:34px;display:flex;align-items:center}.stat .value{font-size:27px;margin:10px 0 5px}.stat .hint{font-size:11px}.card{padding:20px}.card h3{font-size:16px;font-weight:800}.card-head{margin-bottom:16px}.pill{font-size:10px;border-radius:10px;padding:6px 10px}.chart-wrap{height:270px}.advice{border:1px solid #1e4c47;background:#0e292c;color:#7be1bd;border-radius:16px;padding:14px}.range-row{margin:18px 0}.range-row label{font-size:13px;color:var(--text)}input,select,textarea{border-radius:15px;background:#151f34;border-color:#30405a;padding:13px 14px;font-size:13px}.btn{border-radius:14px;padding:11px 15px;font-size:12px}.btn.primary{background:#0ca678;border-color:#0ca678;color:#041b14}.trade{border-radius:18px;padding:16px;background:#151f34;border-color:#263650}.trade-top strong{font-size:14px}.trade-meta .pill{background:#1c2941}.metric-row{font-size:13px;padding:12px 2px}.filter{border-radius:12px;padding:9px 13px}.filter.active{background:#0d3b35;border-color:#10b981}.notice{border-radius:15px;font-size:12px;padding:13px 15px}.notice.warn{background:#302412;border-color:#60441c;color:#e9c16a}.modal-box{border-radius:26px;background:#101a2e;border-color:#273750}
+    .topbar #pageTitle{display:block;font-size:10px;color:var(--muted);font-weight:500;margin-top:1px}.topbar p#todayText{display:none}
+    @media(max-width:760px){
+      body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}.app{padding:0 10px 26px;display:block}.main{min-width:0}.topbar{position:sticky;top:0;z-index:65;margin:0 -10px 14px;padding:10px 13px;background:rgba(8,13,23,.94);border-bottom:1px solid #1c2940;backdrop-filter:blur(18px);min-height:76px;gap:8px}.topbar-brand{gap:8px}.topbar-brand .app-orbit{width:43px;height:43px;border-radius:15px}.topbar-brand-copy strong{font-size:16px}.topbar-brand-copy small{font-size:10px}.sync-pill{font-size:9px;padding:5px 7px}.actions{gap:5px}.icon-btn{width:37px;height:39px;min-width:37px;border-radius:13px;font-size:17px}.actions #lockBtn{display:none}.actions .wide{display:grid}.topbar .statusline{display:none}
+      .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:15px 13px;min-height:126px;border-radius:23px}.stat .label{font-size:10px;padding-left:38px;min-height:32px}.stat:before{width:34px;height:34px;left:12px;top:13px}.stat .value{font-size:22px;margin-top:9px}.stat .hint{font-size:9px}.card{padding:16px;border-radius:24px}.card h3{font-size:14px}.two{grid-template-columns:1fr}.three{grid-template-columns:1fr}.chart-wrap{height:220px}.form-grid{grid-template-columns:1fr}.mobile-nav{position:fixed;z-index:90;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:rgba(8,13,23,.97);border-top:1px solid #1d2b43;padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(20px)}.mobile-nav button{border:0;background:transparent;color:#8796ae;font-size:9px;display:grid;gap:5px;place-items:center;padding:4px 1px;min-width:0}.mobile-nav button b{font-size:0;line-height:1;height:23px;display:grid;place-items:center}.mobile-nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.mobile-nav button span{font-size:9px;white-space:nowrap}.mobile-nav button.active{color:#10b981;font-weight:800}.mobile-nav button.active:before{content:"";position:absolute;top:0;width:34px;height:2px;background:#10b981;border-radius:4px}.mobile-nav button{position:relative}.mobile-nav button[data-nav-key="manual"] b{width:40px;height:40px;border-radius:14px;background:#0ca678;color:#031b13;margin-top:-17px;box-shadow:0 7px 18px #0ca67844}.mobile-nav button[data-nav-key="manual"] svg{stroke:#031b13;width:24px;height:24px}.mobile-nav button.active[data-nav-key="manual"]:before{display:none}
+      .trade-top{align-items:flex-start}.trade-bottom{align-items:flex-start}.trade-actions{flex-wrap:wrap}.login-card{padding:24px;border-radius:26px}.login-card h1{font-size:21px}.login-card .logo{width:64px;height:64px}.field label{font-size:12px}.table-wrap{border-radius:12px}
+    }
+    @media(min-width:761px){.topbar{border-bottom:1px solid var(--line)}.topbar-brand-copy strong{font-size:20px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+
 </head>
 <body>
   <div id="loginWrap" class="login-wrap">
     <div class="login-card">
-      <div class="logo">ZT</div>
+      <div class="logo" aria-hidden="true"></div>
       <h1 id="loginTitle">ورود به ذهن تریدر</h1>
       <p id="loginHint">اطلاعات ژورنال روی همین دستگاه و به‌صورت رمزگذاری‌شده نگهداری می‌شود. برای شروع یک رمز عبور قوی تعیین کن.</p>
       <form id="loginForm">
@@ -52,7 +84,7 @@
 
   <div id="appRoot" class="app hidden">
     <aside class="sidebar">
-      <div class="brand"><div class="logo">ZT</div><div><b>ذهن تریدر</b><span>نسخه 2.1 · ژورنال هوشمند</span></div></div>
+      <div class="brand"><div class="logo" aria-hidden="true"></div><div><b>ذهن تریدر</b><span>نسخه 2.3 · ژورنال هوشمند</span></div></div>
       <nav class="nav" id="sideNav">
         <button class="active" data-view="dashboard"><span class="ico">▦</span>داشبورد</button>
         <button data-view="trades"><span class="ico">⇄</span>ژورنال معاملات</button>
@@ -64,13 +96,17 @@
     </aside>
     <main class="main">
       <header class="topbar">
-        <div><h2 id="pageTitle">داشبورد عملکرد</h2><p id="todayText">خلاصه وضعیت معاملاتی و آمادگی ذهنی</p></div>
+        <div class="topbar-brand">
+          <div class="app-orbit" aria-hidden="true"></div>
+          <div class="topbar-brand-copy"><strong>ذهن تریدر</strong><small id="pageTitle">داشبورد عملکرد</small></div>
+          <span class="sync-pill">MT5 Sync</span>
+        </div>
         <div class="actions">
           <span class="statusline"><i id="syncDot" class="dot off"></i><span id="syncStatus">همگام‌سازی انجام نشده</span></span>
-          <button class="icon-btn wide" title="همگام‌سازی" id="syncBtn">↻</button>
-          <button class="icon-btn wide" title="پشتیبان رمزگذاری‌شده" id="backupBtn">⬇</button>
-          <button class="icon-btn" title="تغییر پوسته" id="themeBtn">☼</button>
-          <button class="icon-btn" title="قفل برنامه" id="lockBtn">🔒</button>
+          <button class="icon-btn wide" title="همگام‌سازی" aria-label="همگام‌سازی" id="syncBtn">↻</button>
+          <button class="icon-btn wide" title="پشتیبان رمزگذاری‌شده" aria-label="پشتیبان رمزگذاری‌شده" id="backupBtn">⇩</button>
+          <button class="icon-btn" title="تغییر پوسته" aria-label="تغییر پوسته" id="themeBtn">☼</button>
+          <button class="icon-btn" title="قفل برنامه" aria-label="قفل برنامه" id="lockBtn">⌑</button>
         </div>
       </header>
 
@@ -173,14 +209,18 @@
         </div>
         <div class="grid two" style="margin-top:14px">
           <div class="card"><h3>امنیت فضای محلی</h3><p class="small muted" style="line-height:2">داده‌های ذخیره‌شده در مرورگر با AES-GCM و کلید مشتق‌شده از رمز عبور رمزگذاری می‌شوند. رمز عبور پیش‌فرض وجود ندارد. قفل برنامه فقط دسترسی رابط را می‌بندد و رمزگذاری فضای داده، لایه محافظ اصلی در حالت ذخیره محلی است.</p><button class="btn danger" id="wipeData">پاک‌کردن کامل داده‌های این دستگاه</button></div>
-          <div class="card"><h3>وضعیت برنامه</h3><div class="metric-row"><span>نسخه</span><b>2.1.0</b></div><div class="metric-row"><span>حالت ذخیره‌سازی</span><b>رمزگذاری‌شده و محلی</b></div><div class="metric-row"><span>اتصال به Sheets</span><b id="connectionState">تنظیم نشده</b></div><div class="metric-row"><span>آخرین همگام‌سازی</span><b id="lastSyncText">—</b></div></div>
+          <div class="card"><h3>وضعیت برنامه</h3><div class="metric-row"><span>نسخه</span><b>2.3.0</b></div><div class="metric-row"><span>حالت ذخیره‌سازی</span><b>رمزگذاری‌شده و محلی</b></div><div class="metric-row"><span>اتصال به Sheets</span><b id="connectionState">تنظیم نشده</b></div><div class="metric-row"><span>آخرین همگام‌سازی</span><b id="lastSyncText">—</b></div></div>
         </div>
       </section>
     </main>
   </div>
 
-  <nav class="mobile-nav" id="mobileNav">
-    <button class="active" data-view="dashboard"><b>▦</b>داشبورد</button><button data-view="trades"><b>⇄</b>معاملات</button><button data-view="psychology"><b>◉</b>کنترل روان</button><button data-view="reports"><b>▤</b>گزارش‌ها</button><button data-view="settings"><b>⚙</b>تنظیمات</button>
+  <nav class="mobile-nav" id="mobileNav" aria-label="ناوبری اصلی">
+    <button data-view="psychology" data-nav-key="psychology"><b><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.7 3.2 7.8 7.5 9.5 4.3-1.7 7.5-4.8 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></b><span>کنترل روان</span></button>
+    <button data-view="trades" data-nav-key="trades"><b><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg></b><span>تاریخچه</span></button>
+    <button data-view="trades" data-nav-key="manual" data-jump="tradeForm"><b><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></b><span>ثبت دستی</span></button>
+    <button data-view="settings" data-nav-key="mt5" data-jump="gasUrl"><b><svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 1M4 17l2 1a7 7 0 0 0 12.4-3"/></svg></b><span>اتصال MT5</span></button>
+    <button class="active" data-view="dashboard" data-nav-key="dashboard"><b><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></b><span>داشبورد</span></button>
   </nav>
 
   <div id="psychModal" class="modal"><div class="modal-box"><div class="card-head"><h3>تکمیل روان‌شناسی معامله</h3><button class="icon-btn" id="closePsych">✕</button></div><div id="psychSummary" class="pill" style="margin-bottom:13px"></div>
@@ -197,7 +237,7 @@
 <script>
 (() => {
   'use strict';
-  const VERSION = '2.1.0';
+  const VERSION = '2.3.0';
   const AUTH_KEY = 'zt2_auth_v1';
   const VAULT_KEY = 'zt2_vault_v1';
   const THEME_KEY = 'zt2_theme_v1';
@@ -270,7 +310,7 @@
   async function showApp(options={}){if(options.remember!==false){if($('rememberSession')?.checked!==false)await rememberCurrentSession();else await startVolatileSession()}$('loginWrap').classList.add('hidden');$('appRoot').classList.remove('hidden');$('mobileNav').classList.remove('hidden');applyTheme();populateSettings();renderAll();refreshPasskeyUI();if(app.data.settings.autoSync&&app.data.settings.gasUrl)syncFromSheet(); }
   async function lockApp(){if(app.breathTimer){clearInterval(app.breathTimer);app.breathTimer=null}if(app.tiltTimer){clearInterval(app.tiltTimer);app.tiltTimer=null}await clearRememberedSession();app.key=null;app.data=null;showLogin(false)}
   function applyTheme(){const light=localStorage.getItem(THEME_KEY)==='light';document.body.classList.toggle('light',light);$('themeBtn').textContent=light?'☾':'☼'}
-  function switchView(view){app.currentView=view;document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const titles={dashboard:'داشبورد عملکرد',trades:'ژورنال معاملات',psychology:'مدیریت روان‌شناسی',reports:'گزارش‌ها و تحلیل',settings:'اتصال و تنظیمات'};$('pageTitle').textContent=titles[view]||'ذهن تریدر';if(view==='reports')renderReports();if(view==='psychology')renderPsychology();if(view==='trades')renderTrades()}
+  function switchView(view,navKey=view){app.currentView=view;document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));document.querySelectorAll('#sideNav [data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));document.querySelectorAll('#mobileNav [data-view]').forEach(b=>b.classList.toggle('active',b.dataset.navKey===navKey));const titles={dashboard:'داشبورد عملکرد',trades:'ژورنال معاملات',psychology:'مدیریت روان‌شناسی',reports:'گزارش‌ها و تحلیل',settings:'اتصال و تنظیمات',manual:'ثبت دستی معامله',mt5:'اتصال MT5 و Google Sheets'};$('pageTitle').textContent=titles[navKey]||titles[view]||'ذهن تریدر';if(view==='reports')renderReports();if(view==='psychology')renderPsychology();if(view==='trades')renderTrades()}
   function isMistake(t){return !t.needsPsych&&(t.ruleStatus&&t.ruleStatus!=='کاملاً رعایت شد'||t.emotion&&t.emotion!=='آرام و منضبط'||t.afterLoss==='yes'||t.reason==='FOMO و ترس از جا ماندن'||t.reason==='جبران ضرر قبلی')}
   function psychScore(t){if(t.needsPsych)return null;let s=100;if(t.emotion&&t.emotion!=='آرام و منضبط')s-=15;if(t.ruleStatus==='خطای جزئی')s-=20;if(t.ruleStatus==='نقض حد ضرر یا حجم'||t.ruleStatus==='ورود خارج از پلن')s-=45;if(Number(t.stress)>=4)s-=10;if(t.afterLoss==='yes')s-=15;return Math.max(0,s)}
   function stats(trades){const n=trades.length,w=trades.filter(t=>Number(t.pnl)>0),l=trades.filter(t=>Number(t.pnl)<0),grossP=w.reduce((a,t)=>a+Number(t.pnl),0),grossL=Math.abs(l.reduce((a,t)=>a+Number(t.pnl),0)),net=grossP-grossL,ordered=[...trades].sort((a,b)=>(safeDate(a.date)?.getTime()||0)-(safeDate(b.date)?.getTime()||0));let cum=0,peak=0,dd=0;ordered.forEach(t=>{cum+=Number(t.pnl)||0;peak=Math.max(peak,cum);dd=Math.max(dd,peak-cum)});return {n,w:w.length,l:l.length,winRate:w.length+l.length?100*w.length/(w.length+l.length):0,grossP,grossL,net,pf:grossL?grossP/grossL:(grossP?Infinity:0),expectancy:n?net/n:0,dd,avg:n?net/n:0}}
@@ -314,7 +354,7 @@
     $('passkeyLogin').onclick=async()=>{ $('loginError').textContent='';try{await unlockWithPasskey()}catch(err){$('loginError').textContent=err.message||'ورود با Passkey انجام نشد.'}};
     $('restoreFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;const p=prompt('رمز عبور فایل پشتیبان را وارد کن:');if(!p)return;try{await restoreBackup(f,p);await showApp();toast('پشتیبان با موفقیت بازیابی شد.')}catch(err){$('loginError').textContent=err.message}e.target.value=''});
     $('settingsRestore').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;const p=prompt('رمز عبور فایل پشتیبان را وارد کن:');if(!p)return;try{await restoreBackup(f,p);await showApp();toast('پشتیبان بازیابی شد.')}catch(err){toast(err.message)}e.target.value=''});
-    $('sideNav').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)switchView(b.dataset.view)});$('mobileNav').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)switchView(b.dataset.view)});document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.goto)));
+    $('sideNav').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)switchView(b.dataset.view)});$('mobileNav').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(!b)return;switchView(b.dataset.view,b.dataset.navKey||b.dataset.view);if(b.dataset.jump)setTimeout(()=>$(b.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'center'}),140)});document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.goto)));
     $('themeBtn').onclick=()=>{const light=!document.body.classList.contains('light');localStorage.setItem(THEME_KEY,light?'light':'dark');applyTheme();drawChart()};$('lockBtn').onclick=async()=>{await persist();await lockApp()};$('syncBtn').onclick=syncFromSheet;$('syncNow').onclick=syncFromSheet;$('backupBtn').onclick=exportBackup;$('settingsBackup').onclick=exportBackup;$('csvBtn').onclick=exportCSV;
     $('saveSettings').onclick=async()=>{app.data.settings={gasUrl:$('gasUrl').value.trim(),apiToken:$('apiToken').value.trim(),autoSync:$('autoSync').checked,sheetName:$('sheetName').value.trim()||'Journal'};await persist();populateSettings();toast('تنظیمات ذخیره شد.')};
     $('registerPasskey').onclick=async()=>{try{await registerPasskey()}catch(err){toast(err.message||'فعال‌سازی Passkey ناموفق بود.')}};
