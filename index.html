@@ -31,6 +31,58 @@
     .modal{position:fixed;inset:0;background:#0009;z-index:120;display:none;place-items:center;padding:15px}.modal.open{display:grid}.modal-box{width:min(100%,600px);max-height:90vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}.modal-box h3{margin:0 0 14px;font-size:15px}.notice{padding:11px 13px;border-radius:12px;background:#58b5f711;border:1px solid #58b5f733;color:var(--muted);font-size:11px;line-height:1.9;margin:10px 0}.notice.warn{background:#f4b74010;border-color:#f4b74044}.mobile-nav{display:none}
     @media(max-width:1100px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.two{grid-template-columns:1fr}.app{grid-template-columns:205px minmax(0,1fr)}}
     @media(max-width:760px){body{padding-bottom:78px}.app{display:block;padding:10px 10px 24px}.sidebar{display:none}.topbar{padding:11px 12px;margin-bottom:12px}.topbar h2{font-size:15px}.topbar p{display:none}.actions .wide{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.stat .value{font-size:20px}.card{padding:14px}.three{grid-template-columns:1fr}.mobile-nav{position:fixed;z-index:80;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);background:var(--panel);border-top:1px solid var(--line);padding:7px 4px calc(7px + env(safe-area-inset-bottom));backdrop-filter:blur(16px)}.mobile-nav button{border:0;background:none;color:var(--muted);font-size:9px;display:grid;gap:3px;place-items:center;padding:4px 0}.mobile-nav button b{font-size:17px}.mobile-nav button.active{color:var(--green)}.form-grid{grid-template-columns:1fr}.chart-wrap{height:205px}.topbar .statusline{display:none}.trade-top{align-items:flex-start}.trade-bottom{align-items:flex-start}.trade-actions{flex-wrap:wrap}.login-card{padding:22px}}
+  
+    /* v2.4.1: icon and report visual refresh */
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .actions{align-items:center}
+    .actions .icon-btn{display:grid;place-items:center;position:relative;width:44px;height:44px;min-width:44px;padding:0;border-radius:15px;border:1px solid #22324f;background:linear-gradient(180deg,#101a2a,#0d1624);box-shadow:0 10px 24px rgba(5,10,20,.18), inset 0 1px 0 rgba(255,255,255,.03);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;color:#dce6ff}
+    .actions .icon-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+    .actions .icon-btn:hover,.actions .icon-btn:focus-visible{transform:translateY(-1px);box-shadow:0 14px 28px rgba(5,10,20,.26), inset 0 1px 0 rgba(255,255,255,.05);border-color:#33507b;outline:none}
+    .actions .icon-btn[data-tone="sync"]{background:linear-gradient(145deg,#245af2,#2f72ff);border-color:#366ef5;color:#eef4ff;box-shadow:0 10px 25px rgba(47,114,255,.28)}
+    .actions .icon-btn[data-tone="backup"]{background:linear-gradient(145deg,#0f2b26,#114135);border-color:#184e43;color:#7de4bd;box-shadow:0 10px 25px rgba(16,185,129,.15)}
+    .actions .icon-btn[data-tone="theme"]{color:#f5f7ff}
+    .actions .icon-btn[data-tone="settings"]{color:#e8edf9}
+    .actions .icon-btn[data-tone="lock"]{color:#dbe2f2}
+    .actions .statusline{margin-inline-start:8px}
+    .report-hero{background:linear-gradient(180deg,rgba(18,32,53,.96),rgba(11,23,41,.96));border:1px solid #223a5f;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+    .report-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:999px;background:#132746;border:1px solid #284776;color:#78a9ff;font-size:11px;font-weight:800;margin-bottom:10px}
+    .report-title{margin:0;font-size:23px;font-weight:900;color:#f6fbff}
+    .report-sub{margin:8px 0 0;color:#95a8c8;line-height:1.9;font-size:13px}
+    .report-headline{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+    .report-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .report-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(15,27,45,.88);border:1px solid #29415f;color:#ddecff;font-size:12px;font-weight:700}
+    .report-grid-gap{margin-top:14px}
+    #view-reports .card h3{font-size:16px}
+    #view-reports .notice{background:#0e1a2d;border-color:#22395b;color:#99abc6}
+    #view-reports .table-wrap table{font-size:13px}
+    #view-reports .stat{border-radius:18px}
+    @media(max-width:760px){
+      .actions .icon-btn{width:42px;height:42px;min-width:42px;border-radius:14px}
+      .actions .icon-btn svg{width:19px;height:19px}
+      .report-title{font-size:20px}
+      .report-sub{font-size:12px}
+      .report-meta{justify-content:flex-start}
+    }
+    @media print{
+      @page{size:A4 portrait;margin:10mm}
+      html,body{background:#fff!important;color:#111!important}
+      #view-reports{display:block!important;color:#0f172a}
+      #view-reports .report-hero{background:#fff!important;border:1px solid #d9e2ef!important;box-shadow:none!important;padding:14px!important}
+      #view-reports .report-eyebrow{background:#eef4ff!important;border-color:#d7e4ff!important;color:#355ea8!important}
+      #view-reports .report-title{color:#0f172a!important;font-size:20px!important}
+      #view-reports .report-sub{color:#5b6880!important;font-size:11px!important}
+      #view-reports .report-chip{background:#f7fafc!important;border-color:#dbe4f0!important;color:#23324b!important}
+      #view-reports .grid.two{grid-template-columns:1fr 1fr!important;gap:10px!important}
+      #view-reports .stats{grid-template-columns:repeat(4,1fr)!important;gap:10px!important}
+      #view-reports .card,#view-reports .stat{background:#fff!important;color:#111!important;box-shadow:none!important;border:1px solid #d9e2ef!important;border-radius:14px!important;padding:12px!important;break-inside:avoid-page}
+      #view-reports .notice{background:#f8fbfe!important;border:1px solid #dbeaf7!important;color:#64748b!important}
+      #view-reports .table-wrap table{font-size:10.5px!important}
+      #view-reports h3{font-size:13px!important;color:#0f172a!important}
+      #view-reports .pill{background:#eef4ff!important;color:#274c8f!important;border:1px solid #d7e4ff!important}
+      #view-reports .positive{color:#0f9b6b!important}
+      #view-reports .negative{color:#cf4257!important}
+    }
+
   </style>
 
   <style id="zt-visual-refresh-23">
@@ -83,6 +135,58 @@
     .report-actions{display:flex;gap:8px;flex-wrap:wrap}
     @media(max-width:760px){.calendar-cell{min-height:52px;padding:4px}.calendar-cell .day-pnl{font-size:8px}.risk-fields{grid-template-columns:1fr}.mobile-nav{grid-template-columns:repeat(5,minmax(0,1fr));direction:rtl}.actions #syncBtn{display:inline-flex!important}}
     @media print{body{background:#fff!important;color:#111!important;padding:0!important}.sidebar,.mobile-nav,.topbar,.login-wrap,.toast,.no-print,button{display:none!important}.app{display:block!important;max-width:none!important;padding:0!important}.view{display:none!important}#view-reports{display:block!important}.card,.stat{background:#fff!important;color:#111!important;box-shadow:none!important;border:1px solid #ccc!important;break-inside:avoid}.muted,.stat .label,.stat .hint{color:#555!important}.analysis-table th,.analysis-table td{border-color:#ddd!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  
+    /* v2.4.1: icon and report visual refresh */
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .actions{align-items:center}
+    .actions .icon-btn{display:grid;place-items:center;position:relative;width:44px;height:44px;min-width:44px;padding:0;border-radius:15px;border:1px solid #22324f;background:linear-gradient(180deg,#101a2a,#0d1624);box-shadow:0 10px 24px rgba(5,10,20,.18), inset 0 1px 0 rgba(255,255,255,.03);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;color:#dce6ff}
+    .actions .icon-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+    .actions .icon-btn:hover,.actions .icon-btn:focus-visible{transform:translateY(-1px);box-shadow:0 14px 28px rgba(5,10,20,.26), inset 0 1px 0 rgba(255,255,255,.05);border-color:#33507b;outline:none}
+    .actions .icon-btn[data-tone="sync"]{background:linear-gradient(145deg,#245af2,#2f72ff);border-color:#366ef5;color:#eef4ff;box-shadow:0 10px 25px rgba(47,114,255,.28)}
+    .actions .icon-btn[data-tone="backup"]{background:linear-gradient(145deg,#0f2b26,#114135);border-color:#184e43;color:#7de4bd;box-shadow:0 10px 25px rgba(16,185,129,.15)}
+    .actions .icon-btn[data-tone="theme"]{color:#f5f7ff}
+    .actions .icon-btn[data-tone="settings"]{color:#e8edf9}
+    .actions .icon-btn[data-tone="lock"]{color:#dbe2f2}
+    .actions .statusline{margin-inline-start:8px}
+    .report-hero{background:linear-gradient(180deg,rgba(18,32,53,.96),rgba(11,23,41,.96));border:1px solid #223a5f;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+    .report-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:999px;background:#132746;border:1px solid #284776;color:#78a9ff;font-size:11px;font-weight:800;margin-bottom:10px}
+    .report-title{margin:0;font-size:23px;font-weight:900;color:#f6fbff}
+    .report-sub{margin:8px 0 0;color:#95a8c8;line-height:1.9;font-size:13px}
+    .report-headline{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+    .report-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .report-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(15,27,45,.88);border:1px solid #29415f;color:#ddecff;font-size:12px;font-weight:700}
+    .report-grid-gap{margin-top:14px}
+    #view-reports .card h3{font-size:16px}
+    #view-reports .notice{background:#0e1a2d;border-color:#22395b;color:#99abc6}
+    #view-reports .table-wrap table{font-size:13px}
+    #view-reports .stat{border-radius:18px}
+    @media(max-width:760px){
+      .actions .icon-btn{width:42px;height:42px;min-width:42px;border-radius:14px}
+      .actions .icon-btn svg{width:19px;height:19px}
+      .report-title{font-size:20px}
+      .report-sub{font-size:12px}
+      .report-meta{justify-content:flex-start}
+    }
+    @media print{
+      @page{size:A4 portrait;margin:10mm}
+      html,body{background:#fff!important;color:#111!important}
+      #view-reports{display:block!important;color:#0f172a}
+      #view-reports .report-hero{background:#fff!important;border:1px solid #d9e2ef!important;box-shadow:none!important;padding:14px!important}
+      #view-reports .report-eyebrow{background:#eef4ff!important;border-color:#d7e4ff!important;color:#355ea8!important}
+      #view-reports .report-title{color:#0f172a!important;font-size:20px!important}
+      #view-reports .report-sub{color:#5b6880!important;font-size:11px!important}
+      #view-reports .report-chip{background:#f7fafc!important;border-color:#dbe4f0!important;color:#23324b!important}
+      #view-reports .grid.two{grid-template-columns:1fr 1fr!important;gap:10px!important}
+      #view-reports .stats{grid-template-columns:repeat(4,1fr)!important;gap:10px!important}
+      #view-reports .card,#view-reports .stat{background:#fff!important;color:#111!important;box-shadow:none!important;border:1px solid #d9e2ef!important;border-radius:14px!important;padding:12px!important;break-inside:avoid-page}
+      #view-reports .notice{background:#f8fbfe!important;border:1px solid #dbeaf7!important;color:#64748b!important}
+      #view-reports .table-wrap table{font-size:10.5px!important}
+      #view-reports h3{font-size:13px!important;color:#0f172a!important}
+      #view-reports .pill{background:#eef4ff!important;color:#274c8f!important;border:1px solid #d7e4ff!important}
+      #view-reports .positive{color:#0f9b6b!important}
+      #view-reports .negative{color:#cf4257!important}
+    }
+
   </style>
 
 </head>
@@ -130,11 +234,11 @@
         </div>
         <div class="actions">
           <span class="statusline"><i id="syncDot" class="dot off"></i><span id="syncStatus">همگام‌سازی انجام نشده</span></span>
-          <button class="icon-btn wide" title="همگام‌سازی" aria-label="همگام‌سازی" id="syncBtn">↻</button>
-          <button class="icon-btn wide" title="پشتیبان رمزگذاری‌شده" aria-label="پشتیبان رمزگذاری‌شده" id="backupBtn">⇩</button>
-          <button class="icon-btn" title="تغییر پوسته" aria-label="تغییر پوسته" id="themeBtn">☼</button>
-          <button class="icon-btn" title="تنظیمات" aria-label="تنظیمات" id="settingsBtn">⚙</button>
-          <button class="icon-btn" title="قفل برنامه" aria-label="قفل برنامه" id="lockBtn">⌑</button>
+          <button class="icon-btn wide" data-tone="sync" title="همگام‌سازی" aria-label="همگام‌سازی" id="syncBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.3 6.36"></path><path d="M3 12A9 9 0 0 1 18.3 5.64"></path><path d="M7 18H5v-2"></path><path d="M17 6h2v2"></path></svg><span class="sr-only">همگام‌سازی</span></button>
+          <button class="icon-btn wide" data-tone="backup" title="پشتیبان رمزگذاری‌شده" aria-label="پشتیبان رمزگذاری‌شده" id="backupBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 19h14"></path></svg><span class="sr-only">پشتیبان</span></button>
+          <button class="icon-btn" data-tone="theme" title="تغییر پوسته" aria-label="تغییر پوسته" id="themeBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><span class="sr-only">پوسته</span></button>
+          <button class="icon-btn" data-tone="settings" title="تنظیمات" aria-label="تنظیمات" id="settingsBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.07V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9.2 20a1.7 1.7 0 0 0-1-.6 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.07-.4H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4 9.2a1.7 1.7 0 0 0 .6-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6c.37 0 .72-.14 1-.4.28-.28.44-.66.4-1.06V3a2 2 0 1 1 4 0v.09c-.03.4.12.78.4 1.06.28.26.63.4 1 .4.69 0 1.35-.27 1.83-.76l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06c-.49.48-.76 1.14-.76 1.83 0 .37.14.72.4 1 .28.28.66.44 1.06.4H21a2 2 0 1 1 0 4h-.09c-.4-.03-.78.12-1.06.4-.26.28-.4.63-.4 1Z"></path></svg><span class="sr-only">تنظیمات</span></button>
+          <button class="icon-btn" data-tone="lock" title="قفل برنامه" aria-label="قفل برنامه" id="lockBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span class="sr-only">قفل</span></button>
         </div>
       </header>
 
@@ -159,7 +263,7 @@
             <div class="advice" id="readyAdvice">آمادگی مناسب؛ پیش از ورود، حد ضرر و ریسک را دوباره بررسی کن.</div>
           </div>
         </div>
-        <div class="grid two" style="margin-top:14px">
+        <div class="grid two report-grid-gap">
           <div class="card"><div class="card-head"><h3>آخرین معاملات</h3><button class="btn ghost" data-goto="trades">مشاهده همه</button></div><div id="recentTrades" class="trade-list"></div></div>
           <div class="card"><div class="card-head"><h3>وضعیت تکمیل روان‌شناسی</h3><span class="pill warn" id="pendingPill">۰ معامله منتظر</span></div><div id="psychProgress"></div><button class="btn warn" id="openPendingBtn" style="margin-top:12px">تکمیل معامله بعدی</button></div>
         </div>
@@ -201,7 +305,7 @@
           <div class="card"><div class="card-head"><h3>تمرین تنفس جعبه‌ای ۴-۴-۴-۴</h3><span class="pill">تنظیم هیجان</span></div><div class="breath"><div id="breathCircle" class="breath-circle"><b id="breathPhase">آماده</b><span id="breathSeconds">4s</span></div></div><div class="form-actions" style="justify-content:center"><button class="btn primary" id="breathStart">شروع تنفس</button><button class="btn" id="breathStop">توقف</button></div><p class="small muted" style="text-align:center;line-height:1.8">دم، نگه‌داشتن، بازدم و مکث؛ هر مرحله ۴ ثانیه.</p></div>
           <div class="card"><div class="card-head"><h3>قفل ضد معامله انتقامی</h3><span class="pill warn">Tilt Lock</span></div><p class="small muted" style="line-height:1.9">پس از ضرر یا افزایش هیجان، وقفه ایجاد کن. پایان قفل بر اساس ساعت دستگاه ذخیره می‌شود و با بستن صفحه از بین نمی‌رود.</p><div id="tiltDisplay" style="font-size:34px;font-weight:900;text-align:center;direction:ltr;margin:18px 0">00:00</div><div class="form-actions"><button class="btn warn" data-tilt="15">قفل ۱۵ دقیقه</button><button class="btn danger" data-tilt="30">قفل ۳۰ دقیقه</button><button class="btn" id="tiltStop">لغو قفل</button></div></div>
         </div>
-        <div class="grid two" style="margin-top:14px">
+        <div class="grid two report-grid-gap">
           <div class="card"><div class="card-head"><h3>قوانین شخصی معامله‌گری</h3><span class="pill">Discipline</span></div><div class="field"><label>قانون جدید</label><div style="display:flex;gap:7px"><input id="newRule" placeholder="مثلاً پس از دو باخت متوالی توقف"><button class="btn primary" id="addRule">افزودن</button></div></div><div class="rules" id="rulesList"></div></div>
           <div class="card"><div class="card-head"><h3>خلاصه رفتار معاملاتی</h3><span class="pill">از معاملات تکمیل‌شده</span></div><div id="behaviorSummary"></div></div>
         </div>
@@ -209,6 +313,20 @@
       </section>
 
       <section class="view" id="view-reports">
+        <div class="card report-hero">
+          <div class="report-headline">
+            <div>
+              <div class="report-eyebrow">Performance Analytics</div>
+              <h2 class="report-title">گزارش تحلیلی ذهن تریدر</h2>
+              <p class="report-sub">خلاصه عملکرد معاملاتی، انضباط اجرایی، ریسک واقعی و الگوهای رفتاری در بازه زمانی انتخاب‌شده.</p>
+            </div>
+            <div class="report-meta">
+              <span class="report-chip" id="reportRangeChip">۳۰ روز اخیر</span>
+              <span class="report-chip" id="reportGeneratedChip">در حال آماده‌سازی</span>
+              <span class="report-chip" id="reportTradeCountChip">۰ معامله</span>
+            </div>
+          </div>
+        </div>
         <div class="card"><div class="card-head"><h3>گزارش عملکرد</h3><span class="pill">Performance Analytics</span></div>
           <div class="form-grid"><div class="field"><label>بازه گزارش</label><select id="reportRange"><option value="7">۷ روز اخیر</option><option value="30" selected>۳۰ روز اخیر</option><option value="90">۹۰ روز اخیر</option><option value="all">تمام دوره</option></select></div><div class="field"><label>واحد نمایش</label><select id="reportCurrency"><option value="USD">USD</option></select></div></div>
           <div class="grid stats" style="grid-template-columns:repeat(4,minmax(0,1fr))"><div class="stat"><div class="label">تعداد معاملات</div><div class="value" id="rCount">0</div></div><div class="stat"><div class="label">سود خالص</div><div class="value" id="rNet">$0</div></div><div class="stat"><div class="label">میانگین سود</div><div class="value" id="rAvg">$0</div></div><div class="stat"><div class="label">درصد پایبندی</div><div class="value" id="rDiscipline">0%</div></div></div>
@@ -221,8 +339,8 @@
           <div class="card"><h3>عملکرد بر اساس ساعت ورود</h3><div class="table-wrap" id="hourTable"></div><div class="notice">اگر زمان ورود در داده MT5 موجود نباشد، ساعت بسته‌شدن به‌عنوان تقریب استفاده می‌شود.</div></div>
           <div class="card"><h3>مقایسه استراتژی‌ها</h3><div class="table-wrap" id="strategyTable"></div><div class="notice">برای معاملات قدیمی که نام استراتژی ندارند، مقدار «نامشخص» نمایش داده می‌شود.</div></div>
         </div>
-        <div class="grid two" style="margin-top:14px"><div class="card"><h3>مقایسه معاملات منضبط و دارای خطا</h3><div id="disciplineCompare"></div></div><div class="card"><h3>عملکرد بر اساس احساس غالب</h3><div id="emotionBreakdown"></div></div></div>
-        <div class="card" style="margin-top:14px"><div class="card-head"><h3>خلاصه نمادها</h3><div class="report-actions"><button class="btn" id="csvBtn">خروجی CSV</button><button class="btn primary" id="pdfBtn">چاپ / ذخیره PDF</button></div></div><div class="table-wrap"><table><thead><tr><th>نماد</th><th>تعداد</th><th>برد</th><th>نرخ برد</th><th>سود خالص</th><th>میانگین</th></tr></thead><tbody id="symbolTable"></tbody></table></div></div>
+        <div class="grid two report-grid-gap"><div class="card"><h3>مقایسه معاملات منضبط و دارای خطا</h3><div id="disciplineCompare"></div></div><div class="card"><h3>عملکرد بر اساس احساس غالب</h3><div id="emotionBreakdown"></div></div></div>
+        <div class="card report-grid-gap"><div class="card-head"><h3>خلاصه نمادها</h3><div class="report-actions"><button class="btn" id="csvBtn">خروجی CSV</button><button class="btn primary" id="pdfBtn">چاپ / ذخیره PDF</button></div></div><div class="table-wrap"><table><thead><tr><th>نماد</th><th>تعداد</th><th>برد</th><th>نرخ برد</th><th>سود خالص</th><th>میانگین</th></tr></thead><tbody id="symbolTable"></tbody></table></div></div>
       </section>
 
       <section class="view" id="view-settings">
@@ -257,7 +375,7 @@
         </div>
         <div class="grid two" style="margin-top:14px">
           <div class="card"><h3>امنیت فضای محلی</h3><p class="small muted" style="line-height:2">داده‌های ذخیره‌شده در مرورگر با AES-GCM و کلید مشتق‌شده از رمز عبور رمزگذاری می‌شوند. رمز عبور پیش‌فرض وجود ندارد. قفل برنامه فقط دسترسی رابط را می‌بندد و رمزگذاری فضای داده، لایه محافظ اصلی در حالت ذخیره محلی است.</p><button class="btn danger" id="wipeData">پاک‌کردن کامل داده‌های این دستگاه</button></div>
-          <div class="card"><h3>وضعیت برنامه</h3><div class="metric-row"><span>نسخه</span><b>2.4.0</b></div><div class="metric-row"><span>حالت ذخیره‌سازی</span><b>رمزگذاری‌شده و محلی</b></div><div class="metric-row"><span>اتصال به Sheets</span><b id="connectionState">تنظیم نشده</b></div><div class="metric-row"><span>آخرین همگام‌سازی</span><b id="lastSyncText">—</b></div></div>
+          <div class="card"><h3>وضعیت برنامه</h3><div class="metric-row"><span>نسخه</span><b>2.4.1</b></div><div class="metric-row"><span>حالت ذخیره‌سازی</span><b>رمزگذاری‌شده و محلی</b></div><div class="metric-row"><span>اتصال به Sheets</span><b id="connectionState">تنظیم نشده</b></div><div class="metric-row"><span>آخرین همگام‌سازی</span><b id="lastSyncText">—</b></div></div>
         </div>
       </section>
     </main>
@@ -285,7 +403,7 @@
 <script>
 (() => {
   'use strict';
-  const VERSION = '2.4.0';
+  const VERSION = '2.4.1';
   const AUTH_KEY = 'zt2_auth_v1';
   const VAULT_KEY = 'zt2_vault_v1';
   const THEME_KEY = 'zt2_theme_v1';
@@ -378,7 +496,7 @@
   function updateReadinessUI(){const r=app.data.readiness;[['sleep','sleepRange','sleepVal'],['focus','focusRange','focusVal'],['plan','planRange','planVal']].forEach(([k,i,v])=>{$(i).value=r[k];$(v).textContent=r[k]+'/5'});const score=Math.round((r.sleep+r.focus+r.plan)/15*100);$('readyBadge').textContent='آمادگی '+score+'%';$('readyBadge').className='pill '+(score>=75?'good':score>=50?'warn':'bad');$('readyAdvice').textContent=score>=75?'آمادگی مناسب؛ پیش از ورود، حد ضرر و ریسک را دوباره بررسی کن.':score>=50?'آمادگی متوسط؛ حجم و تعداد معاملات را کاهش بده.':'آمادگی پایین؛ بهتر است فعلاً معامله نکنی.'}
   function renderPsychology(){const completed=app.data.trades.filter(t=>!t.needsPsych),clean=completed.filter(t=>!isMistake(t)),mistakes=completed.filter(isMistake),avg=a=>a.length?a.reduce((s,t)=>s+(Number(t.pnl)||0),0)/a.length:0;const revenge=completed.filter(t=>t.afterLoss==='yes').length;const emotional=completed.filter(t=>t.emotion&&t.emotion!=='آرام و منضبط').length;$('behaviorSummary').innerHTML=`<div class="metric-row"><span>معاملات منضبط</span><b class="positive">${faNum(clean.length)}</b></div><div class="metric-row"><span>معاملات دارای خطا</span><b class="negative">${faNum(mistakes.length)}</b></div><div class="metric-row"><span>میانگین P/L منضبط</span><b class="${avg(clean)>=0?'positive':'negative'}">${fmtMoney(avg(clean))}</b></div><div class="metric-row"><span>میانگین P/L دارای خطا</span><b class="${avg(mistakes)>=0?'positive':'negative'}">${fmtMoney(avg(mistakes))}</b></div><div class="metric-row"><span>ورود بعد از ضرر قبلی</span><b>${faNum(revenge)}</b></div><div class="metric-row"><span>معاملات با هیجان غیرآرام</span><b>${faNum(emotional)}</b></div>`;$('rulesList').innerHTML=app.data.rules.length?app.data.rules.map((r,i)=>`<div class="rule"><span>${esc(r)}</span><button class="btn danger" data-rule-del="${i}">حذف</button></div>`).join(''):'<div class="empty">هنوز قانونی ثبت نشده است.</div>';$('rulesList').querySelectorAll('[data-rule-del]').forEach(b=>b.onclick=async()=>{app.data.rules.splice(Number(b.dataset.ruleDel),1);await persist();renderPsychology()});renderInsights()}
   function renderInsights(){const done=app.data.trades.filter(t=>!t.needsPsych);const avg=a=>a.length?a.reduce((s,t)=>s+(Number(t.pnl)||0),0)/a.length:0;const insights=[];if(done.length<5)insights.push('برای تحلیل قابل‌اتکاتر، حداقل ۵ معامله را با اطلاعات روان‌شناسی کامل ثبت کن.');else{const after=done.filter(t=>t.afterLoss==='yes'),notAfter=done.filter(t=>t.afterLoss!=='yes');if(after.length>=2&&notAfter.length>=2){const delta=avg(after)-avg(notAfter);insights.push(delta<0?`معاملات بعد از ضرر قبلی به‌طور میانگین ${fmtMoney(Math.abs(delta))} ضعیف‌تر از سایر معاملات بوده‌اند؛ پیش از ورود بعدی وقفه را جدی بگیر.`:`در داده‌های فعلی، عملکرد معاملات بعد از ضرر قبلی بدتر از سایر معاملات نیست؛ همچنان تعداد نمونه را زیر نظر داشته باش.`)}const fomo=done.filter(t=>(t.emotion||'').includes('FOMO')||t.reason==='FOMO و ترس از جا ماندن'),other=done.filter(t=>!fomo.includes(t));if(fomo.length>=2&&other.length>=2){const delta=avg(fomo)-avg(other);insights.push(delta<0?`معاملات دارای FOMO به‌طور میانگین ${fmtMoney(Math.abs(delta))} نتیجه ضعیف‌تری داشته‌اند؛ کیفیت تأیید ستاپ را قبل از ورود بررسی کن.`:`در نمونه فعلی، گروه FOMO افت میانگین مشخصی نسبت به سایر معاملات ندارد.`)}const broken=done.filter(t=>t.ruleStatus&&t.ruleStatus!=='کاملاً رعایت شد'),followed=done.filter(t=>t.ruleStatus==='کاملاً رعایت شد');if(broken.length>=2&&followed.length>=2){insights.push(avg(broken)<avg(followed)?`معاملات با نقض یا خطای پلن، میانگین P/L پایین‌تری از معاملات منطبق با پلن دارند؛ اجرای پلن اولویت اصلاحی مناسبی است.`:`در داده فعلی تفاوت منفی روشنی میان این دو گروه دیده نمی‌شود.`)}const mistakeRate=done.length?done.filter(isMistake).length/done.length:0;if(mistakeRate>.4)insights.push(`حدود ${Math.round(mistakeRate*100)}٪ معاملات تکمیل‌شده برچسب خطای رفتاری دارند؛ روی یک خطای پرتکرار تمرکز کن، نه چند تغییر هم‌زمان.`);const s=stats(done);if(s.dd>0&&s.dd>Math.max(50,Math.abs(s.net)*.75))insights.push('افت تجمعی نسبت به سود/زیان خالص قابل‌توجه است؛ توالی معاملات زیان‌ده و اندازه ریسک را جداگانه بررسی کن.')}if(!insights.length)insights.push('هنوز الگوی رفتاری مشخصی از داده‌ها استخراج نشده است. پس از تکمیل چند معامله دیگر دوباره بررسی کن.');$('smartInsights').innerHTML=insights.map((x,i)=>`<div class="metric-row"><span><b>${faNum(i+1)}.</b> ${esc(x)}</span></div>`).join('')}
-  function renderReports(){const range=$('reportRange').value||'30',cut=range==='all'?0:Date.now()-Number(range)*86400000;const arr=app.data.trades.filter(t=>{const d=safeDate(t.date);return !cut||(d&&d.getTime()>=cut)});const s=stats(arr),done=arr.filter(t=>!t.needsPsych),clean=done.filter(t=>!isMistake(t)),bad=done.filter(isMistake);$('rCount').textContent=faNum(s.n);$('rNet').textContent=fmtMoney(s.net);$('rAvg').textContent=fmtMoney(s.avg);$('rDiscipline').textContent=(done.length?Math.round(clean.length/done.length*100):0)+'%';const mean=a=>a.length?a.reduce((x,t)=>x+Number(t.pnl||0),0)/a.length:0;$('disciplineCompare').innerHTML=`<div class="metric-row"><span>منضبط · تعداد ${faNum(clean.length)}</span><b class="${mean(clean)>=0?'positive':'negative'}">${fmtMoney(mean(clean))} میانگین</b></div><div class="metric-row"><span>دارای خطا · تعداد ${faNum(bad.length)}</span><b class="${mean(bad)>=0?'positive':'negative'}">${fmtMoney(mean(bad))} میانگین</b></div><div class="notice">این مقایسه توصیفی است و به‌تنهایی رابطه علت و معلولی را اثبات نمی‌کند.</div>`;const emo={};done.forEach(t=>{const k=t.emotion||'نامشخص';emo[k]??={n:0,pnl:0};emo[k].n++;emo[k].pnl+=Number(t.pnl)||0});$('emotionBreakdown').innerHTML=Object.entries(emo).length?Object.entries(emo).sort((a,b)=>b[1].n-a[1].n).map(([k,v])=>`<div class="metric-row"><span>${esc(k)} · ${faNum(v.n)}</span><b class="${v.pnl>=0?'positive':'negative'}">${fmtMoney(v.pnl)}</b></div>`).join(''):'<div class="empty">برای تحلیل، ابتدا وضعیت روان‌شناسی معاملات را تکمیل کن.</div>';const syms={};arr.forEach(t=>{const k=t.symbol||'نامشخص';syms[k]??={n:0,w:0,pnl:0};syms[k].n++;if(Number(t.pnl)>0)syms[k].w++;syms[k].pnl+=Number(t.pnl)||0});$('symbolTable').innerHTML=Object.entries(syms).sort((a,b)=>b[1].pnl-a[1].pnl).map(([k,v])=>`<tr><td>${esc(k)}</td><td>${faNum(v.n)}</td><td>${faNum(v.w)}</td><td>${(v.n?v.w/v.n*100:0).toFixed(1)}%</td><td class="${v.pnl>=0?'positive':'negative'}">${fmtMoney(v.pnl)}</td><td>${fmtMoney(v.pnl/v.n)}</td></tr>`).join('')||'<tr><td colspan="6">داده‌ای وجود ندارد.</td></tr>';renderAdvancedReports(arr);renderCalendar()}
+  function renderReports(){const range=$('reportRange').value||'30',rangeLabel=({7:'۷ روز اخیر',30:'۳۰ روز اخیر',90:'۹۰ روز اخیر',all:'تمام دوره'})[range]||'۳۰ روز اخیر',cut=range==='all'?0:Date.now()-Number(range)*86400000;const arr=app.data.trades.filter(t=>{const d=safeDate(t.date);return !cut||(d&&d.getTime()>=cut)});const s=stats(arr),done=arr.filter(t=>!t.needsPsych),clean=done.filter(t=>!isMistake(t)),bad=done.filter(isMistake);$('rCount').textContent=faNum(s.n);$('rNet').textContent=fmtMoney(s.net);$('rAvg').textContent=fmtMoney(s.avg);$('rDiscipline').textContent=(done.length?Math.round(clean.length/done.length*100):0)+'%';const mean=a=>a.length?a.reduce((x,t)=>x+Number(t.pnl||0),0)/a.length:0;$('disciplineCompare').innerHTML=`<div class="metric-row"><span>منضبط · تعداد ${faNum(clean.length)}</span><b class="${mean(clean)>=0?'positive':'negative'}">${fmtMoney(mean(clean))} میانگین</b></div><div class="metric-row"><span>دارای خطا · تعداد ${faNum(bad.length)}</span><b class="${mean(bad)>=0?'positive':'negative'}">${fmtMoney(mean(bad))} میانگین</b></div><div class="notice">این مقایسه توصیفی است و به‌تنهایی رابطه علت و معلولی را اثبات نمی‌کند.</div>`;const emo={};done.forEach(t=>{const k=t.emotion||'نامشخص';emo[k]??={n:0,pnl:0};emo[k].n++;emo[k].pnl+=Number(t.pnl)||0});$('emotionBreakdown').innerHTML=Object.entries(emo).length?Object.entries(emo).sort((a,b)=>b[1].n-a[1].n).map(([k,v])=>`<div class="metric-row"><span>${esc(k)} · ${faNum(v.n)}</span><b class="${v.pnl>=0?'positive':'negative'}">${fmtMoney(v.pnl)}</b></div>`).join(''):'<div class="empty">برای تحلیل، ابتدا وضعیت روان‌شناسی معاملات را تکمیل کن.</div>';const syms={};arr.forEach(t=>{const k=t.symbol||'نامشخص';syms[k]??={n:0,w:0,pnl:0};syms[k].n++;if(Number(t.pnl)>0)syms[k].w++;syms[k].pnl+=Number(t.pnl)||0});$('symbolTable').innerHTML=Object.entries(syms).sort((a,b)=>b[1].pnl-a[1].pnl).map(([k,v])=>`<tr><td>${esc(k)}</td><td>${faNum(v.n)}</td><td>${faNum(v.w)}</td><td>${(v.n?v.w/v.n*100:0).toFixed(1)}%</td><td class="${v.pnl>=0?'positive':'negative'}">${fmtMoney(v.pnl)}</td><td>${fmtMoney(v.pnl/v.n)}</td></tr>`).join('')||'<tr><td colspan="6">داده‌ای وجود ندارد.</td></tr>';if($('reportRangeChip'))$('reportRangeChip').textContent=rangeLabel;if($('reportGeneratedChip'))$('reportGeneratedChip').textContent='تهیه: '+new Intl.DateTimeFormat('fa-IR',{dateStyle:'medium',timeStyle:'short'}).format(new Date());if($('reportTradeCountChip'))$('reportTradeCountChip').textContent=faNum(s.n)+' معامله';renderAdvancedReports(arr);renderCalendar()}
 
   function localDayKey(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
   function getTodayTrades(){const key=localDayKey(new Date());return app.data.trades.filter(t=>{const d=safeDate(t.date);return d&&localDayKey(d)===key})}
