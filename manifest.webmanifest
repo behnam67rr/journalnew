@@ -2,7 +2,7 @@
   "id": "./",
   "name": "ذهن تریدر",
   "short_name": "ذهن تریدر",
-  "description": "ژورنال معاملاتی، مدیریت ریسک روزانه، تقویم شمسی و تحلیل عملکرد و روان‌شناسی ترید",
+  "description": "ژورنال حرفه‌ای معاملات و تحلیل عملکرد",
   "lang": "fa",
   "dir": "rtl",
   "start_url": "./index.html",
@@ -13,8 +13,8 @@
     "minimal-ui"
   ],
   "orientation": "portrait-primary",
-  "background_color": "#080d17",
-  "theme_color": "#080d17",
+  "background_color": "#050d14",
+  "theme_color": "#050d14",
   "categories": [
     "finance",
     "productivity"
@@ -44,5 +44,6 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "version": "2.8.6"
 }
